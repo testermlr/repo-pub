@@ -1,0 +1,19 @@
+
+name: Run Script
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run a simple script
+        run: |
+          echo "Hello, GitHub Actions!"
+          python3 -c "print('This is executed in a VM')"
